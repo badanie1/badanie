@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+  <meta charset="UTF-8">
+  <title>Losowe przekierowanie</title>
+  <script>
+    // Lista linków do losowego przyporządkowania
+    const links = [
+      "https://www.youtube.com/feed",
+      "https://www.google.pl/index.html",
+      "https://pl.wikipedia.org/wiki/Wikipedia:Strona_g%C5%82%C3%B3wna"
+    ];
+
+    // Losowy wybór linku
+    const randomLink = links[Math.floor(Math.random() * links.length)];
+
+    // Przekierowanie po załadowaniu strony
+    window.onload = function() {
+      window.location.href = randomLink;
+    };
+  </script>
+</head>
+<body>
+  <p>Trwa przekierowanie... Jeśli nie nastąpi automatycznie, <a href="#" onclick="window.location.href = randomLink;">kliknij tutaj</a>.</p>
+</body>
+</html>
