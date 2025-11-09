@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+  <meta charset="UTF-8">
+  <title>Losowe przekierowanie</title>
+  <script>
+    // Lista linków do losowego przyporządkowania
+    const links = [
+      "https://docs.google.com/forms/d/e/1FAIpQLSdzrBmcDBpULJR9sWd9j-RZHyOds_Gk2gX2UvOWiXp6ChU2BQ/viewform?usp=preview",
+      "https://docs.google.com/forms/d/e/1FAIpQLSfXkg-QIiS2RW1ckjQ6NmuOkm59CgfRSoRfHTzp1jUzvoPc-A/viewform?usp=preview",
+      "https://docs.google.com/forms/d/e/1FAIpQLSfecMtAznj94jYp-BcM3swimCKwPOc5geX8pHAL3kSCrZJLJw/viewform?usp=preview"
+    ];
+
+    // Losowy wybór linku
+    const randomLink = links[Math.floor(Math.random() * links.length)];
+
+    // Przekierowanie po załadowaniu strony
+    window.onload = function() {
+      window.location.href = randomLink;
+    };
+  </script>
+</head>
+<body>
+  <p>Trwa przekierowanie... Jeśli nie nastąpi automatycznie, <a href="#" onclick="window.location.href = randomLink;">kliknij tutaj</a>.</p>
+</body>
+</html>
