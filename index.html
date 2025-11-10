@@ -11,8 +11,9 @@
       "https://docs.google.com/forms/d/e/1FAIpQLSfXkg-QIiS2RW1ckjQ6NmuOkm59CgfRSoRfHTzp1jUzvoPc-A/viewform?usp=publish-editor"
     ];
 
-    // Losowy wybór linku
-    const randomLink = links[Math.floor(Math.random() * links.length)];
+    // Losowy wybór linku i dodanie parametru zapobiegającego cache'owaniu
+    const baseLink = links[Math.floor(Math.random() * links.length)];
+    const randomLink = baseLink + "&t=" + Date.now();
 
     // Przekierowanie po załadowaniu strony
     window.onload = function() {
@@ -24,3 +25,4 @@
   <p>Trwa przekierowanie... Jeśli nie nastąpi automatycznie, <a href="#" onclick="window.location.href = randomLink;">kliknij tutaj</a>.</p>
 </body>
 </html>
+
